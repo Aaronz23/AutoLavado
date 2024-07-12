@@ -18,31 +18,44 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-// API AUTOS
 
+// LOGUIN
+Route::post('login',[LoginController::class,'login']);
+
+
+// API AUTOS
 Route::post('auto/guardar',[AutoController::class,'storeApi']);//strore = guardar
 Route::post('/auto/borrar/{id}',[AutoController::class,'deleteApi']);
 Route::get('/autos',[AutoController::class, 'store']);
 Route::get('autos',[AutoController::class,'indexApi']);
 
 
-
-// RUTAS NUEVAS AUTOLAVADO
-
+// RUTAS servicio
 Route::post('servicio/guardar',[ServicioController::class,'storeApi']);//strore = guardar
 Route::delete('/servicio/borrar/{id}',[ServicioController::class,'deleteApi']);
 //Route::get('servicios',[ServicioController::class,'viewApi']);//autorized =  autorizados
 Route::get('/servicios',[ServicioController::class, 'store']);
 Route::get('servicios',[ServicioController::class,'indexApi']);
-// LOGUIN
-Route::post('login',[LoginController::class,'login']);
 
 
+//Rutas citas
+Route::post('cita/guardar',[CitaController::class,'storeApi']);//strore = guardar
+Route::post('/cita/borrar/{id}',[CitaController::class,'deleteApi']);
+Route::get('/citas',[CitaController::class, 'store']);
+Route::get('citas',[CitaController::class,'indexApi']);
 
 
+//Ruta Registro de usuario 
+Route::post('usuario/guardar',[UsuarioController::class,'storeApi']);//strore = guardar
+Route::post('/usuario/borrar/{id}',[UsuarioController::class,'deleteApi']);
+Route::get('/usuarios',[UsuarioController::class, 'store']);
+Route::get('usuarios',[UsuarioController::class,'indexApi']);
 
-
-
+//Ruta etapas
+Route::post('etapa/guardar',[EtapaController::class,'storeApi']);//strore = guardar
+Route::post('/etapa/borrar/{id}',[EtapaController::class,'deleteApi']);
+Route::get('/etapas',[EtapaController::class, 'store']);
+Route::get('etapas',[EtapaController::class,'indexApi']);
 
 
 
